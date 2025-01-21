@@ -1,0 +1,22 @@
+ol{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    text-decoration: none;
+    margin:0;
+    padding: 0;
+    height: 5vh;
+    background-color: lightblue;
+
+}
+.link{
+    text-decoration: none;
+    color:blueviolet;
+    padding:3px;
+}
+.link:hover{
+    background-color: antiquewhite;
+    color:chocolate;
+    border-radius: 10px;
+    
+}
