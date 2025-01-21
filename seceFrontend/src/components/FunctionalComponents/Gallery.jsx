@@ -1,3 +1,4 @@
+//Props
 const Gallery=(props)=>{
     return (<div>
         <h3>Welcome to {props.page} page!!</h3>
