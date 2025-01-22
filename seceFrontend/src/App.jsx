@@ -9,6 +9,7 @@ import Login from "./components/FunctionalComponents/Login"
 import UseState from "./components/FunctionalComponents/Hooks/useState"
 import UseEffect from "./components/FunctionalComponents/Hooks/UseEffect"
 import UseEffectAPI from "./components/FunctionalComponents/Hooks/UseEffectAPI"
+import UseEffectImageAPI from "./components/FunctionalComponents/Hooks/UseEffectImageAPI"
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import "./App.css";
 import { useState } from "react";
@@ -47,6 +48,8 @@ function App() {
             <Route path="/UseState" element={<UseState />}></Route>
             <Route path="/UseEffect" element={<UseEffect />}></Route>
             <Route path="UseEffectAPI" element={<UseEffectAPI/>}></Route>
+            <Route path="UseEffectImageAPI" element={<UseEffectImageAPI/>}></Route>
+        
           </Routes>
         </>
       )}

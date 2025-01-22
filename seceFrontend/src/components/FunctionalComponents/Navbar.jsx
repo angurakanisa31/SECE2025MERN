@@ -19,8 +19,8 @@ const Navbar = (onLogout) => {
                     {dropdown &&
                         (
                             <ul>
-                                {/* <li><Link to='/useState' target='_blank'>useState</Link></li> */}
-                                <li>useEffect</li>
+                                { <li><Link to='/useState' target='_blank'>useState</Link></li> }
+                                {<li><Link to='/useEffect' target='_blank'>useEffect</Link></li>}
                             </ul>
                         )
                     }
@@ -28,6 +28,7 @@ const Navbar = (onLogout) => {
                 <li><Link to='/UseState' class="link">UseState</Link></li>
                 <li><Link to='/UseEffect' class="link">UseEffect</Link></li>
                 <li><Link to='/UseEffectAPI' class="link">UseEffectAPI</Link></li>
+                <li><Link to='/UseEffectImageAPI' class="link">UseEffectImageAPI</Link></li>
                 <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
             </ol>
         </nav>
