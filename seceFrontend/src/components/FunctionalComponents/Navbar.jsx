@@ -27,6 +27,7 @@ const Navbar = (onLogout) => {
                 </div>
                 <li><Link to='/UseState' class="link">UseState</Link></li>
                 <li><Link to='/UseEffect' class="link">UseEffect</Link></li>
+                <li><Link to='/UseEffectAPI' class="link">UseEffectAPI</Link></li>
                 <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
             </ol>
         </nav>
