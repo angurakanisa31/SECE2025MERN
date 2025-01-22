@@ -3,11 +3,20 @@ ol{
     justify-content: space-around;
     list-style-type: none;
     text-decoration: none;
-    margin:0;
+    margin: 0;
     padding: 0;
-    height: 5vh;
+    height: 10vh;
     background-color: lightblue;
 
+}
+ul{
+    display:flexbox;
+    position:absolute;
+    text-decoration: none;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    color:brown;
 }
 .link{
     text-decoration: none;
