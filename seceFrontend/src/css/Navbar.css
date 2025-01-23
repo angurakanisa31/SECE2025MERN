@@ -21,3 +21,10 @@ ol{
     border-radius: 10px;
     
 }
+.dropdown{
+    position:relative;
+    color:blueviolet;
+    text-decoration: none;
+    list-style-type:none;
+    
+}

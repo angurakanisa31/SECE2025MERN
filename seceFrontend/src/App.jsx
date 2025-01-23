@@ -10,6 +10,10 @@ import UseState from "./components/FunctionalComponents/Hooks/useState"
 import UseEffect from "./components/FunctionalComponents/Hooks/UseEffect"
 import UseEffectAPI from "./components/FunctionalComponents/Hooks/UseEffectAPI"
 import UseEffectImageAPI from "./components/FunctionalComponents/Hooks/UseEffectImageAPI"
+import UseRef from "./components/FunctionalComponents/Hooks/UseRef"
+import UseMemo from "./components/FunctionalComponents/Hooks/UseMemo"
+import UseCallback from "./components/FunctionalComponents/Hooks/UseCallback"
+import UseReducer from "./components/FunctionalComponents/Hooks/UseReducer"
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import "./App.css";
 import { useState } from "react";
@@ -49,6 +53,10 @@ function App() {
             <Route path="/UseEffect" element={<UseEffect />}></Route>
             <Route path="UseEffectAPI" element={<UseEffectAPI/>}></Route>
             <Route path="UseEffectImageAPI" element={<UseEffectImageAPI/>}></Route>
+            <Route path="/UseRef" element={<UseRef/>}></Route>
+            <Route path="/UseMemo" element={<UseMemo/>}></Route>
+            <Route path="/UseCallback" element={<UseCallback/>}></Route>
+            <Route path="/UseReducer" element={<UseReducer/>}></Route>
         
           </Routes>
         </>
