@@ -9,7 +9,6 @@ const Navbar = (onLogout) => {
     return (<header>
         <nav>
             <ol>
-
                 <li><Link to='/' className="link">Home</Link></li>
                 <li><Link to='/About' className="link">About</Link></li>
                 <li><Link to='/Gallery' className="link" >Gallery</Link></li>
