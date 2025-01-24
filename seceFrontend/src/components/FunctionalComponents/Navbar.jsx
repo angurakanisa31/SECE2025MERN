@@ -17,6 +17,7 @@ const Navbar = (onLogout) => {
                     <span >Hooks</span>
                     {dropdown &&
                         ( <ul>
+                            <li><Link to='/ReactLifecycleMethods' class="link">ReactLifecycleMethods</Link></li>
                             <li><Link to='/UseState' class="link">UseState</Link></li>
                             <li><Link to='/UseEffect' class="link">UseEffect</Link></li>
                             <li><Link to='/UseEffectAPI' class="link">UseEffectAPI</Link></li>
