@@ -32,7 +32,15 @@ const Navbar = (onLogout) => {
                     }
                
                 </div>
-                <li><Link to='/Memo' class="link">React.Memo</Link></li>
+                <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown} class="dropdown">
+                    <span >Memoization</span>
+                    {dropdown &&
+                        ( <ul>
+                            <li><Link to='/Memo' class="link">React.Memo</Link></li>
+                          
+                          </ul>  )}
+                </div> 
+              
                 <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
             </ol>
         </nav>

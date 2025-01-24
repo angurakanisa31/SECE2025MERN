@@ -1,6 +1,6 @@
 import { useState } from "react";
 var UseState=()=>{
-    var[num,setNum]=useState(0)
+    var[num,setNum]=useState(0);
     return(
         <div>
             <h1>This is Usestate example</h1>
