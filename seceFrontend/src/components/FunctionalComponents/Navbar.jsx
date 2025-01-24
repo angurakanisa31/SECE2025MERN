@@ -26,12 +26,13 @@ const Navbar = (onLogout) => {
                             <li><Link to='/UseMemo' class="link">UseMemo</Link></li>
                             <li><Link to='/UseCallback' class="link">UseCallback</Link></li>
                             <li><Link to='/UseReducer' class="link">UseReducer</Link></li>
+                            <li><Link to='/UseContext' class="link">UseContext</Link></li>
                         </ul>  
                         )
                     }
                
                 </div>
-                
+                <li><Link to='/Memo' class="link">React.Memo</Link></li>
                 <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
             </ol>
         </nav>
