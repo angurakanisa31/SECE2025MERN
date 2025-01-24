@@ -45,7 +45,7 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route path='/Home' element={<Home />}></Route>
+            <Route path='/' element={<Home />}></Route>
             <Route path='/About' element={<About />}></Route>
             <Route path="/Gallery" element={<Gallery image="SECE logo" page="Gallery" />}></Route>
             <Route path="/Contact" element={<Contact />}></Route>
