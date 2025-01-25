@@ -37,9 +37,13 @@ const Navbar = (onLogout) => {
                     {dropdown &&
                         ( <ul>
                             <li><Link to='/Memo' class="link">React.Memo</Link></li>
+                            <li><Link to='/LazyLoadingWithSupense' class="link">React.Lazy</Link></li>
                           
                           </ul>  )}
                 </div> 
+                <li><Link to='/UseLocalStorage' class="link">UseLocalStorage</Link></li>
+                <li><Link to='/HoC' class="link">HoC</Link></li>
+                
               
                 <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
             </ol>

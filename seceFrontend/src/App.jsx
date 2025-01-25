@@ -20,6 +20,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import "./App.css";
 import { useState } from "react";
 import Memo from "./components/FunctionalComponents/Memoization/Memo"
+import LazyLoadingWithSupense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSupense"
+import UseLocalStorage from "./components/FunctionalComponents/Hooks/CustomHooks/UseLoacalStorage"
+import HoC from "./components/FunctionalComponents/Hooks/CustomHooks/HoC/HoC"
 
 
 function App() {
@@ -63,6 +66,9 @@ function App() {
             <Route path="/ReactLifecycleMethods" element={<ReactLifecycleMethods/>}></Route>
             <Route path="/UseContext" element={<UseContext/>}></Route>
             <Route path="/Memo" element={<Memo/>}></Route>
+            <Route path="/LazyLoadingWithSupense" element={<LazyLoadingWithSupense/>}></Route>
+            <Route path="/UseLocalStorage" element={<UseLocalStorage/>}></Route>
+            <Route path="/HoC" element={<HoC/>}></Route>
             
         
           </Routes>
