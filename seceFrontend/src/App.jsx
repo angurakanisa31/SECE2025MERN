@@ -23,6 +23,7 @@ import Memo from "./components/FunctionalComponents/Memoization/Memo"
 import LazyLoadingWithSupense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSupense"
 import UseLocalStorage from "./components/FunctionalComponents/Hooks/CustomHooks/UseLoacalStorage"
 import HoC from "./components/FunctionalComponents/Hooks/CustomHooks/HoC/HoC"
+import UseLocal from "./components/FunctionalComponents/Hooks/CustomHooks/UseLocal"
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
             <Route path="/LazyLoadingWithSupense" element={<LazyLoadingWithSupense/>}></Route>
             <Route path="/UseLocalStorage" element={<UseLocalStorage/>}></Route>
             <Route path="/HoC" element={<HoC/>}></Route>
+            <Route path="/UseLocal" element={<UseLocal/>}></Route>
             
         
           </Routes>

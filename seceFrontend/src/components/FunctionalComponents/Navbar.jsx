@@ -43,8 +43,7 @@ const Navbar = (onLogout) => {
                 </div> 
                 <li><Link to='/UseLocalStorage' class="link">UseLocalStorage</Link></li>
                 <li><Link to='/HoC' class="link">HoC</Link></li>
-                
-              
+                <li><Link to='/UseLocal' class="link">UseLocal</Link></li>
                 <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
             </ol>
         </nav>
