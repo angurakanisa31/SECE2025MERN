@@ -3,8 +3,14 @@ const path = require("path");
 const mdb = require("mongoose");
 const dotenv = require("dotenv");
 const Signup = require("./models/signupSchema");
+const bcrypt = require("bcrypt");
+const cors=require('cors');
+
 dotenv.config();
 const app = express();
+
+app.use(cors())
+
 app.use(express.json());
 
 mdb
@@ -25,8 +31,10 @@ app.get("/static", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 //signup
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   var { firstName, lastName, username, email, password } = req.body;
+  var hashedpassword = await bcrypt.hash(password, 10);
+  console.log(hashedpassword);
   try {
     console.log("Inside try");
     const newCustomer = new Signup({
@@ -34,7 +42,7 @@ app.post("/signup", (req, res) => {
       lastName: lastName,
       username: username,
       email: email,
-      password: password,
+      password: hashedpassword,
     });
     newCustomer.save();
     res.status(201).send("signup successfull");
@@ -72,7 +80,7 @@ app.post("/updatedet", async (req, res) => {
     { $set: { username: "angu3110" } }
   );
   console.log(updateRec);
-   updateRec.save();
+  updateRec.save();
   res.json("Record Updated");
 });
 
