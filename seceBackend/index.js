@@ -28,75 +28,64 @@ app.get("/static", (req, res) => {
 app.post("/signup", (req, res) => {
   var { firstName, lastName, username, email, password } = req.body;
   try {
-console.log("Inside try");
-      const newCustomer = new Signup({
+    console.log("Inside try");
+    const newCustomer = new Signup({
       firstName: firstName,
       lastName: lastName,
       username: username,
       email: email,
       password: password,
     });
-    newCustomer.save()
+    newCustomer.save();
     res.status(201).send("signup successfull");
   } catch (err) {
-    res.status(400).send("Signup Unsuccessfull",err);
+    res.status(400).send("Signup Unsuccessfull", err);
   }
 });
 // login
-app.post('/login',async(req,res)=>{
-  const{email,password}=req.body;
-  try{
-    const user=await Signup.findOne({email:email});
-    if(!user){
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await Signup.findOne({ email: email });
+    if (!user) {
       return res.status(404).send("User not found");
     }
-    if(user.password === password){
+    if (user.password === password) {
       res.status(200).send("Login Successful");
-    }else{
+    } else {
       res.status(401).send("Incorrect Password");
     }
-  }
-  catch(err){
+  } catch (err) {
     res.status(500).send("Error during login");
   }
 });
 
 // get Signup details route
-app.get('/getsignupdet',async(req,res)=>{
-  
-  try{
-    const signUpdet=await Signup.find();
+app.get("/getsignupdet", async (req, res) => {
+  var signUpdet = await Signup.find();
   res.status(200).json(signUpdet);
-  }catch(err){
-    res.status(500).send("Error fetching signup details");
-  }
 });
-//update user details 
-app.put('/updateuser',async(req,res)=>{
-  const{id,...updates}=req.body;
-  try{
-    const updateUser =await Signup.findByIdAndUpdate(id,updates,{new:true});
-    if(!updateUser){
-      return res.status(404).send("User not found");
-    }
-    res.status(200).send("User details update successfull");
-  }
-  catch(err){
-    res.status(500).send("Error updating user details");
-  }
+//update user details
+app.post("/updatedet", async (req, res) => {
+  var updateRec = await Signup.findOneAndUpdate(
+    { username: "angunisha" },
+    { $set: { username: "angu3110" } }
+  );
+  console.log(updateRec);
+   updateRec.save();
+  res.json("Record Updated");
 });
 
-// Delete user 
-app.delete('/deleteuser',async(req,res)=>{
-  const{id}=req.body;
-  try{
-    const deleteUser=await Signup.findByIdAndDelete(id);
-    if(!deleteUser){
+// Delete user
+app.delete("/deleteuser", async (req, res) => {
+  const { id } = req.body;
+  try {
+    const deleteUser = await Signup.findByIdAndDelete(id);
+    if (!deleteUser) {
       return res.status(404).send("User not found");
     }
     res.status(200).send("User deleted successdull");
-  }
-  catch(err){
+  } catch (err) {
     res.status(500).send("Error deleting user");
   }
 });
