@@ -6,6 +6,8 @@ const Signup = require("./models/signupSchema");
 const bcrypt = require("bcrypt");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+const { CLIENT_RENEG_LIMIT } = require("tls");
+const { Console } = require("console");
 dotenv.config();
 const app = express();
 
@@ -77,20 +79,20 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await Signup.findOne({ email });
-    console.log(user);
     if (user) {
+      console.log(user)
       const payload = {
         email: user.email,
       };
+      console.log(payload)
       const token = jwt.sign(payload, process.env.SECRET_KEY, {
         expiresIn: "1h",
       });
       console.log(token);
       var isPasswordCorrect = await bcrypt.compare(password, user.password);
-      // console.log(password,user.password);
+      console.log(password,user.password, isPasswordCorrect);
       if (isPasswordCorrect) {
-        await user.save();
-        res.status(200).send("Login Successful", (token = token));
+        res.status(200).jsonp({message:"Login Successful", token : token});
       } else {
         res.status(200).send("Login Unsuccessful");
       }
