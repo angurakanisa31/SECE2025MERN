@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const Signup = require("./models/signupSchema");
 const bcrypt = require("bcrypt");
 const cors=require('cors');
-
+const jwt=require('jsonwebtoken')
 dotenv.config();
 const app = express();
 
@@ -54,20 +54,31 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await Signup.findOne({ email: email });
-    if (!user) {
-      return res.status(404).send("User not found");
-    }
-    if (user.password === password) {
-      res.status(200).send("Login Successful");
-    } else {
-      res.status(401).send("Incorrect Password");
-    }
+      const user = await Signup.findOne({ email });
+      console.log(user)
+      if (user) {
+          const payload = {
+              email: user.email
+          }
+          const token = jwt.sign(payload, process.env.SECRET_KEY,{expiresIn:'1h'});
+          console.log(token);
+          var isPasswordCorrect= await bcrypt.compare(password, user.password)
+          // console.log(password,user.password);
+          if (isPasswordCorrect) {
+          await user.save();
+          res.status(200).send("Login Successful",token=token);
+      }
+      else{
+          res.status(200).send("Login Unsuccessful");
+      }
+      }
+       else {
+          res.status(401).send("User not found please signup!");
+      }
   } catch (err) {
-    res.status(500).send("Error during login");
-  }
+      res.status(500).send({message:"Error during login"});
+    }
 });
-
 // get Signup details route
 app.get("/getsignupdet", async (req, res) => {
   var signUpdet = await Signup.find();
