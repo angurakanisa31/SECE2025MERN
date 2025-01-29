@@ -22,7 +22,7 @@ const Signup = (props) => {
       });
       console.log(req);
       alert(req.data);
-      //navigate("/Login");
+      navigate("/Login");
     } catch (err) {
       console.log(err);
     }
