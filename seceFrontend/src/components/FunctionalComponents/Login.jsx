@@ -6,7 +6,7 @@ const navigate = useNavigate();
   const handleLogin = (e) =>{
     e.preventDefault()
     props.onLogin();
-    navigate("/home");
+    navigate("/Home");
   }
   return (
     <div>
